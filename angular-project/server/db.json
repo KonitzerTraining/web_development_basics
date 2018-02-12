@@ -1,0 +1,28 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "customerId": "09284483",
+      "fullName": "Wilhelm",
+      "credit": 35657
+    },
+    {
+      "id": 2,
+      "customerId": "23453245",
+      "fullName": "Dieter",
+      "credit": 4000
+    },
+    {
+      "customerId": "3456eu",
+      "fullName": "sdfxgh",
+      "credit": 2435,
+      "id": 5
+    },
+    {
+      "customerId": "sdf",
+      "fullName": "sdf",
+      "credit": 234,
+      "id": 6
+    }
+  ]
+}

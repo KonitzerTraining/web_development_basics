@@ -1,0 +1,29 @@
+<div>
+  <h2>Kunde ändern</h2>
+  <div class="form-group">
+    <label for="kdnr">Kunden-Nummer: </label>
+    <input [(ngModel)]="customer.customerId" required minlength="3" type="text" class="form-control" [class.is-invalid]="customerId.touched && !customerId.valid" id="kdnr" aria-describedby="kdnrHelp" placeholder="" #customerId="ngModel">
+    <small id="kdnrHelp" class="form-text text-muted">
+      {{customerId.touched}}
+      {{customerId.dirty}}
+      {{customerId.valid}}
+    </small>
+  </div>
+
+  <div class="form-group">
+    <label for="fullName">Vor- und Nachname</label>
+    <input [(ngModel)]="customer.fullName" required minlength="3"  type="text" class="form-control" id="fullName" aria-describedby="fullNameHelp" placeholder="Name" [class.is-invalid]="fullName.touched && !fullName.valid" #fullName="ngModel">
+    <small id="fullNameHelp" class="form-text text-muted">   {{fullName.touched}}
+      {{fullName.dirty}}
+      {{fullName.valid}}</small>
+  </div>
+
+  <div class="form-group">
+    <label for="credit">Kredit-Rahmen</label>
+    <input [(ngModel)]="customer.credit" min="0" required type="number" class="form-control" id="credit" aria-describedby="creditHelp"[class.is-invalid]="credit.touched && !credit.valid" placeholder="Kreditrahmen in Euro" #credit="ngModel">
+    <small id="creditHelp" class="form-text text-muted">Fehlermeldung</small>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-info" (click)="discard()">Abbrechen</button>
+  <button type="submit" class="btn btn-primary" [disabled]="(!credit.valid) || (!customerId.valid) || (!fullName.valid)" (click)="saveCustomer()"> Änderungen speichern!</button>
+</div>

@@ -1,0 +1,25 @@
+
+<app-customer-new (created)="onCreation($event)" *ngIf="createFlag"></app-customer-new>
+<button class="btn btn-primary" (click)="create()" *ngIf="!createFlag">Neuer Kunde</button>
+<table class="table table-striped mt-5">
+  <thead>
+  <tr>
+    <th>Kunden-Nr.</th>
+    <th>Name</th>
+    <th>Kredit</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customers" [class.no-credit]="customer.credit === 0">
+
+    <td>{{customer.customerId}}</td>
+    <td>{{customer.fullName}}</td>
+    <td class="text-right">{{customer.credit | number}}</td>
+    <td>
+      <button class="btn btn-danger" (click)="deleteCustomer(customer.id)">Delete</button>
+      <button class="btn btn-primary" (click)="goToEditCustomer(customer.id)">Edit</button></td>
+  </tr>
+
+  </tbody>
+</table>

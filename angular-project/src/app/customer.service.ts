@@ -16,10 +16,7 @@ export class CustomerService {
   }
 
   getCustomers(): Observable<Customer[]> {
-    return this.http.get<Customer[]>('http://localhost:3000/customer')
-      .pipe(
-        catchError(this.handleError('Fehler', []))
-      );
+    return this.http.get<Customer[]>('http://localhost:3000/customer');
   }
 
   handleError(operation = 'operation', result?: Customer[]) {

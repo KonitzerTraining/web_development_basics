@@ -16,10 +16,9 @@
     <td>{{customer.customerId}}</td>
     <td>{{customer.fullName}}</td>
     <td class="text-right">{{customer.credit | number}}</td>
-    <td>
+    <td class="text-right">
       <button class="btn btn-danger" (click)="deleteCustomer(customer.id)">Delete</button>
       <button class="btn btn-primary" (click)="goToEditCustomer(customer.id)">Edit</button></td>
   </tr>
-
   </tbody>
 </table>
